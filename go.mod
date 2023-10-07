@@ -1,6 +1,6 @@
 module github.com/awoodbeck/gnp
 
-go 1.20
+go 1.21.2
 
 require (
 	github.com/awoodbeck/caddy-restrict-prefix v1.0.3
@@ -39,6 +39,7 @@ require (
 	github.com/cespare/xxhash/v2 v2.2.0 // indirect
 	github.com/chzyer/readline v0.0.0-20180603132655-2972be24d48e // indirect
 	github.com/cpuguy83/go-md2man/v2 v2.0.2 // indirect
+	github.com/cshyun7015/gnp/ch14/feed v0.0.0-20231007101628-9196096c9b44
 	github.com/dgraph-io/badger v1.6.2 // indirect
 	github.com/dgraph-io/badger/v2 v2.2007.4 // indirect
 	github.com/dgraph-io/ristretto v0.1.0 // indirect

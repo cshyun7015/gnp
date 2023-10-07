@@ -3,8 +3,8 @@ package main
 import (
 	"context"
 
-	"github.com/awoodbeck/gnp/ch14/feed"
 	"github.com/aws/aws-lambda-go/lambda"
+	"github.com/cshyun7015/gnp/ch14/feed"
 )
 
 var (

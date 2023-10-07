@@ -1,3 +1,3 @@
-module github.com/awoodbeck/gnp/ch14/feed
+module github.com/cshyun7015/gnp/ch14/feed
 
-go 1.15
+go 1.21.2

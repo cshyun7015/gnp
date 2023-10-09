@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/http/httptest"
 	"testing"
@@ -13,7 +12,7 @@ func drainAndClose(next http.Handler) http.Handler {
 	return http.HandlerFunc(
 		func(w http.ResponseWriter, r *http.Request) {
 			next.ServeHTTP(w, r)
-			_, _ = io.Copy(ioutil.Discard, r.Body)
+			_, _ = io.Copy(io.Discard, r.Body)
 			_ = r.Body.Close()
 		},
 	)
@@ -60,7 +59,7 @@ func TestSimpleMux(t *testing.T) {
 			t.Errorf("%d: expected code %d; actual %d", i, c.code, actual)
 		}
 
-		b, err := ioutil.ReadAll(resp.Body)
+		b, err := io.ReadAll(resp.Body)
 		if err != nil {
 			t.Fatal(err)
 		}

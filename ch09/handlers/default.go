@@ -3,7 +3,6 @@ package handlers
 import (
 	"html/template"
 	"io"
-	"io/ioutil"
 	"net/http"
 )
 
@@ -13,7 +12,7 @@ func DefaultHandler() http.Handler {
 	return http.HandlerFunc(
 		func(w http.ResponseWriter, r *http.Request) {
 			defer func(r io.ReadCloser) {
-				_, _ = io.Copy(ioutil.Discard, r)
+				_, _ = io.Copy(io.Discard, r)
 				_ = r.Close()
 			}(r.Body)
 
@@ -24,7 +23,7 @@ func DefaultHandler() http.Handler {
 				b = []byte("friend")
 			case http.MethodPost:
 				var err error
-				b, err = ioutil.ReadAll(r.Body)
+				b, err = io.ReadAll(r.Body)
 				if err != nil {
 					http.Error(w, "Internal server error",
 						http.StatusInternalServerError)

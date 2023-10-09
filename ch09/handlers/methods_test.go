@@ -2,7 +2,7 @@ package handlers
 
 import (
 	"bytes"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/http/httptest"
 	"testing"
@@ -20,7 +20,7 @@ func TestMethodsHandler(t *testing.T) {
 		t.Fatalf("unexpected status code: %q", resp.Status)
 	}
 
-	b, err := ioutil.ReadAll(resp.Body)
+	b, err := io.ReadAll(resp.Body)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -40,7 +40,7 @@ func TestMethodsHandler(t *testing.T) {
 		t.Fatalf("unexpected status code: %q", resp.Status)
 	}
 
-	b, err = ioutil.ReadAll(resp.Body)
+	b, err = io.ReadAll(resp.Body)
 	if err != nil {
 		t.Fatal(err)
 	}

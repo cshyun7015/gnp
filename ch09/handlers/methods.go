@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"html"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"sort"
 	"strings"
@@ -14,7 +13,7 @@ type Methods map[string]http.Handler
 
 func (h Methods) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	defer func(r io.ReadCloser) {
-		_, _ = io.Copy(ioutil.Discard, r)
+		_, _ = io.Copy(io.Discard, r)
 		_ = r.Close()
 	}(r.Body)
 
@@ -55,7 +54,7 @@ func DefaultMethodsHandler() http.Handler {
 		),
 		http.MethodPost: http.HandlerFunc(
 			func(w http.ResponseWriter, r *http.Request) {
-				b, err := ioutil.ReadAll(r.Body)
+				b, err := io.ReadAll(r.Body)
 				if err != nil {
 					http.Error(w, "Internal server error",
 						http.StatusInternalServerError)

@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"net"
 	"net/http"
 	"testing"
@@ -65,7 +64,7 @@ func TestSimpleHTTPServer(t *testing.T) {
 			t.Errorf("%d: unexpected status code: %q", i, resp.Status)
 		}
 
-		b, err := ioutil.ReadAll(resp.Body)
+		b, err := io.ReadAll(resp.Body)
 		if err != nil {
 			t.Errorf("%d: %v", i, err)
 			continue
@@ -134,7 +133,7 @@ func TestSimpleHTTPServerMethods(t *testing.T) {
 			t.Errorf("%d: unexpected status code: %q", i, resp.Status)
 		}
 
-		b, err := ioutil.ReadAll(resp.Body)
+		b, err := io.ReadAll(resp.Body)
 		if err != nil {
 			t.Errorf("%d: %v", i, err)
 			continue

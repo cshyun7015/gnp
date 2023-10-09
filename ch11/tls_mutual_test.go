@@ -6,14 +6,14 @@ import (
 	"crypto/tls"
 	"crypto/x509"
 	"errors"
-	"io/ioutil"
 	"net"
+	"os"
 	"strings"
 	"testing"
 )
 
 func caCertPool(caCertFn string) (*x509.CertPool, error) {
-	caCert, err := ioutil.ReadFile(caCertFn)
+	caCert, err := os.ReadFile(caCertFn)
 	if err != nil {
 		return nil, err
 	}

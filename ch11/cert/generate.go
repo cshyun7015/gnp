@@ -35,7 +35,7 @@ func main() {
 	template := x509.Certificate{
 		SerialNumber: serial,
 		Subject: pkix.Name{
-			Organization: []string{"Adam Woodbeck"},
+			Organization: []string{"cs hyun"},
 		},
 		NotBefore: notBefore,
 		NotAfter:  notBefore.Add(10 * 356 * 24 * time.Hour),

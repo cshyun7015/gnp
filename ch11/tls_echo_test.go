@@ -6,7 +6,7 @@ import (
 	"crypto/tls"
 	"crypto/x509"
 	"io"
-	"io/ioutil"
+	"os"
 	"strings"
 	"testing"
 	"time"
@@ -32,7 +32,7 @@ func TestEchoServerTLS(t *testing.T) {
 	}()
 	server.Ready()
 
-	cert, err := ioutil.ReadFile("cert.pem")
+	cert, err := os.ReadFile("cert.pem")
 	if err != nil {
 		t.Fatal(err)
 	}

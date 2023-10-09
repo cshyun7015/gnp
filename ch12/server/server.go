@@ -9,7 +9,7 @@ import (
 
 	"google.golang.org/grpc"
 
-	"github.com/awoodbeck/gnp/ch12/housework/v1"
+	"github.com/cshyun7015/gnp/ch12/housework/v1"
 )
 
 var addr, certFn, keyFn string

@@ -6,7 +6,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"mime/multipart"
 	"net/http"
 	"net/http/httptest"
@@ -24,7 +23,7 @@ type User struct {
 func handlePostUser(t *testing.T) func(http.ResponseWriter, *http.Request) {
 	return func(w http.ResponseWriter, r *http.Request) {
 		defer func(r io.ReadCloser) {
-			_, _ = io.Copy(ioutil.Discard, r)
+			_, _ = io.Copy(io.Discard, r)
 			_ = r.Close()
 		}(r.Body)
 
@@ -138,7 +137,7 @@ func TestMultipartPost(t *testing.T) {
 	}
 	defer func() { _ = resp.Body.Close() }()
 
-	b, err := ioutil.ReadAll(resp.Body)
+	b, err := io.ReadAll(resp.Body)
 	if err != nil {
 		t.Fatal(err)
 	}

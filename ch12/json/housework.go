@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"io"
 
-	"github.com/awoodbeck/gnp/ch12/housework"
+	"github.com/cshyun7015/gnp/ch12/housework"
 )
 
 func Load(r io.Reader) ([]*housework.Chore, error) {

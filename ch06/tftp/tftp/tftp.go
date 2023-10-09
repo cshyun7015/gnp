@@ -5,7 +5,7 @@ import (
 	"io/ioutil"
 	"log"
 
-	"github.com/awoodbeck/gnp/ch06/tftp"
+	"github.com/cshyun7015/gnp/ch06/tftp"
 )
 
 var (

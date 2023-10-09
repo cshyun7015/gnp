@@ -15,7 +15,7 @@ import (
 
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 
-	"github.com/awoodbeck/gnp/ch13/instrumentation/metrics"
+	"github.com/cshyun7015/gnp/ch13/instrumentation/metrics"
 )
 
 var (

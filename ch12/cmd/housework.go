@@ -9,10 +9,10 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/awoodbeck/gnp/ch12/housework"
-	storage "github.com/awoodbeck/gnp/ch12/json"
-	// storage "github.com/awoodbeck/gnp/ch12/gob"
-	// storage "github.com/awoodbeck/gnp/ch12/protobuf"
+	"github.com/cshyun7015/gnp/ch12/housework"
+	storage "github.com/cshyun7015/gnp/ch12/json"
+	// storage "github.com/cshyun7015/gnp/ch12/gob"
+	// storage "github.com/cshyun7015/gnp/ch12/protobuf"
 )
 
 var dataFile string

@@ -10,7 +10,7 @@ import (
 	"os/user"
 	"path/filepath"
 
-	"github.com/awoodbeck/gnp/ch07/creds/auth"
+	"github.com/cshyun7015/gnp/ch07/creds/auth"
 )
 
 func init() {

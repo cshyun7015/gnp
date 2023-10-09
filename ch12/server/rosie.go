@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/awoodbeck/gnp/ch12/housework/v1"
+	"github.com/cshyun7015/gnp/ch12/housework/v1"
 )
 
 type Rosie struct {

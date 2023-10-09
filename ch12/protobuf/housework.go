@@ -6,7 +6,7 @@ import (
 
 	"google.golang.org/protobuf/proto"
 
-	"github.com/awoodbeck/gnp/ch12/housework/v1"
+	"github.com/cshyun7015/gnp/ch12/housework/v1"
 )
 
 func Load(r io.Reader) ([]*housework.Chore, error) {
